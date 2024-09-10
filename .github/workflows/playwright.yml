@@ -30,7 +30,7 @@ jobs:
       run: npx playwright test
 
 
-        - name: Send email on failure
+    - name: Send email on failure
       if: failure() # This condition ensures the email is sent only if previous steps fail
       uses: dawidd6/action-send-mail@v3
       with:
