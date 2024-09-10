@@ -43,7 +43,7 @@ jobs:
           API tests failed. Better check TR!!! 
 
     - name: send default message
-      if: always()
+      if: failure()
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
