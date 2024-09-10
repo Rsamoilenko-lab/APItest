@@ -37,13 +37,13 @@ jobs:
         username: ${{ secrets.SMTP_USERNAME }}
         password: ${{ secrets.SMTP_PASSWORD }}
         subject: GitHub Actions Workflow Failed
-        to: ${{ secrets.ROSS_EMAIL }}, ${{ secrets.PRODUCT_EMAIL }}, ${{ secrets.LEAD_EMAIL }}, ${{ secrets.MYKHAIL_EMAIL }}
+        to: ${{ secrets.ROSS_EMAIL }}
         from: ${{ secrets.SMTP_USERNAME }}
         body: |
           API tests failed. Better check TR!!! 
 
     - name: send default message
-      if: failure()
+      if: always()
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
