@@ -1,5 +1,5 @@
 export default class Arrays {
-    categories = ['all']
+    categories = ['top', 'slots', 'new', 'jackpots', 'jackpot-mini', 'jackpot-mid', 'jackpot-max', 'megaways', 'crash', 'fruits']
 
-    currencies = ['EUR']
+    currencies = ['EUR', 'USD', 'AUD', 'PLN', 'NZD', 'CHF', 'CAD']
 }
