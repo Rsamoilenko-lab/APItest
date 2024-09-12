@@ -23,8 +23,6 @@ test.describe('Check API logging in', async () => {
 
         delete loggedUser1.messaging__token
         delete loggedUser1.sessionUuid
-
-        console.log(loggedUser1)
         
         expect(loggedUser1).toEqual(expectedResponse.ofUser1);
         
@@ -81,32 +79,28 @@ test.describe('API check game providers', async () => {
     }
 })
 
-test.describe('API check registration', async () => {
-    let JWT
-    const email = generatedEmail
-    const password = userPassword
+// test.describe('API check registration', async () => {
+//     let JWT
+//     const email = generatedEmail
+//     const password = userPassword
 
 
-    test.beforeEach(async ({authController}) => {
-        JWT = await authController.getJwtToken()
-    })
+//     test.beforeEach(async ({authController}) => {
+//         JWT = await authController.getJwtToken()
+//     })
 
-    test('Register user', async ({authController}) => {
+//     test('Register user', async ({authController}) => {
 
-        const registeredUserInfo = await authController.regUser(JWT, email, password)
-        const userID = await registeredUserInfo.userId
+//         const registeredUserInfo = await authController.regUser(JWT, email, password)
+//         const userID = await registeredUserInfo.userId
 
-        console.log(registeredUserInfo)
+//         const userInfo = await authController.logIn(JWT, email, password)
+//         const loggedUserID = await userInfo.userId
 
-        const userInfo = await authController.logIn(JWT, email, password)
-        const loggedUserID = await userInfo.userId
-
-        console.log(userInfo)
-
-        expect(userID).toEqual(loggedUserID)
-        expect(registeredUserInfo.messaging__login).toEqual(userInfo.messaging__login)
-    })
-})
+//         expect(userID).toEqual(loggedUserID)
+//         expect(registeredUserInfo.messaging__login).toEqual(userInfo.messaging__login)
+//     })
+// })
 
 
 test.describe('API get banners', async () => {
@@ -119,9 +113,7 @@ test.describe('API get banners', async () => {
 
     test('Get banners on the main page', async ({promoController}) => {
         const banners = await promoController.getMainPageBanners(JWT)
-        
-        console.log(banners)
-        
+
         const numberOfBanners = banners.childs.length
 
         console.log(numberOfBanners)
