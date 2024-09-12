@@ -17,9 +17,11 @@ test.describe('Check API logging in', async () => {
     })
 
     test('Check API logging', async ({authController}) => {
-        
+    
 
         const loggedUser1 = await authController.logIn(JWT, email, password)
+
+        console.log(loggedUser1)
 
         delete loggedUser1.messaging__token
         delete loggedUser1.sessionUuid
