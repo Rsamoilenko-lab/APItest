@@ -42,13 +42,13 @@ jobs:
         body: |
           API tests failed. Better check TR!!! 
 
-    # - name: send default message
-    #   if: failure()
-    #   uses: appleboy/telegram-action@master
-    #   with:
-    #     to: ${{ secrets.TELEGRAM_TO }}
-    #     token: ${{ secrets.TELEGRAM_TOKEN }}
-    #     message: "API tests failed. Better check TR!!! "
+    - name: send default message
+      if: failure()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: "API tests failed. Better check TR!!! "
 
     - uses: actions/upload-artifact@v4
       if: always()
