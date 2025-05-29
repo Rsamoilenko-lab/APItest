@@ -1,7 +1,7 @@
 export default class ExpectedResponse {
     ofUser1 = 
     {
-        balance: { amount: 15000, currency: 'EUR' },
+        balance: { amount: 0, currency: 'EUR' },
         country: 'IRL',
         language: 'en',
         level: { lastPointsUsed: 0, level: 0, points: 0, shopPoints: 0 },
